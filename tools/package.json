@@ -1,0 +1,9 @@
+{
+  "name": "polyglot-cpp-studio-release-tools",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Build-time tools for the Polyglot C++ Studio extension",
+  "devDependencies": {
+    "@vscode/vsce": "4.1.1"
+  }
+}

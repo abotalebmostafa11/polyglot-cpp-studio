@@ -1,0 +1,1 @@
+5e0dffc0b2f025251691bc90dece613009217ec1d6f7e1f2f7ea90201c0e933d  polyglot-cpp-studio-2.3.0.vsix
