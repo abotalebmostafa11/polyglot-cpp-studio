@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Polyglot C++ Studio</title>
+<link rel="stylesheet" href="ui.css">
+<script defer src="ui.js"></script>
+<script defer src="editor.js"></script>
+<script defer src="capture.js"></script>
+</head>
+<body>
+<header>
+  <div class="product"><img src="app.png" width="54" height="54" alt=""><div><h1>Polyglot C++ Studio <span class="version">2.4.0</span></h1><div class="credit" data-t="credit">Created and designed by Associate Professor Mostafa Abotaleb</div></div></div>
+  <picture class="university"><img id="university" src="university-light.png" alt="Yugra State University"></picture>
+</header>
+<nav aria-label="Editor controls">
+  <div class="group">
+    <button data-action="new" data-icon="new" data-t="new">New</button>
+    <button data-action="open" data-icon="open" data-t="open">Open</button>
+    <button data-action="save" data-icon="save" data-t="save">Save</button>
+    <button data-action="saveAs" data-t="saveAs">Save as</button>
+  </div><b class="divider"></b><div class="group">
+    <button class="run" data-action="run" data-icon="run" data-t="run">Run</button>
+    <button data-action="stop" data-icon="stop" data-t="stop" disabled>Stop</button>
+  </div><div class="group" id="captureGroup">
+    <button id="screenshot" data-t="screenshot">Screenshot</button>
+    <button id="videoToggle" data-t="record">Record video</button>
+    <button id="endVideo" data-t="stopSave" hidden>Stop and save</button>
+    <span id="captureStatus" aria-live="polite"></span>
+  </div><span class="flex"></span>
+  <select id="language" aria-label="Language" title="Language"><option value="en">English</option><option value="ar">العربية</option><option value="bn">বাংলা</option><option value="ru">Русский</option></select>
+  <select id="theme" aria-label="Theme" title="Theme"><option value="system" data-t="system">System</option><option value="light" data-t="light">Light</option><option value="dark" data-t="dark">Dark</option></select>
+</nav>
+<main>
+  <section class="source">
+    <div class="section-head"><h2 data-t="source">Source code</h2><span class="filename" id="filename">Untitled.cpp</span><span class="flex"></span><span class="cursor" id="cursor"></span></div>
+    <div class="editing"><pre id="lines" aria-hidden="true">1</pre><textarea id="source" wrap="off" dir="ltr" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" aria-label="Source code"></textarea></div>
+  </section>
+  <div class="io">
+    <section class="input"><div class="section-head"><h2 data-t="input">Program input</h2></div>
+      <textarea id="input" dir="auto" spellcheck="false" aria-label="Program input"></textarea>
+    </section>
+    <section class="output"><div class="section-head"><h2 data-t="output">Compiler and program output</h2><span class="flex"></span>
+      <button id="trace" class="link" data-action="trace" data-icon="trace" data-t="trace">Trace issue</button></div>
+      <pre id="output" dir="auto" tabindex="0" aria-live="off"></pre>
+    </section>
+  </div>
+</main>
+<div id="completion" role="listbox" aria-label="C++ members" hidden></div>
+<footer>
+ <div class="indicator" id="indicator"></div><span id="status" role="status">Ready</span><span class="flex"></span>
+ <button class="link" id="tools" data-action="tools" data-t="installTools" hidden>Install C++ tools</button>
+ <button class="link" data-action="vscode" data-t="connect">Connect VS Code</button>
+ <button class="link" data-action="log" data-t="log">Issue log</button>
+</footer>
+</body></html>
