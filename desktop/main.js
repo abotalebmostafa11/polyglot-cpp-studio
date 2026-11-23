@@ -12,7 +12,7 @@ const files=[{name:'C++',extensions:['cpp','cxx','cc','h','hpp','hh','hxx','C']}
 const tr=k=>languages[lang]?.[k]||languages.en[k]||k;
 function send(event){if(win && !win.isDestroyed()) win.webContents.send('studio',event);}
 function status(key,detail=''){send({kind:'status',key,detail});}
-function title(){win.setTitle((file?path.basename(file):'Untitled.cpp')+(dirty?' •':'')+' — '+name+' 2.4.0');}
+function title(){win.setTitle((file?path.basename(file):'Untitled.cpp')+(dirty?' •':'')+' — '+name+' 2.4.1');}
 function settings(){
   const json=JSON.stringify({lang,theme});prefQueue=prefQueue.then(()=>fs.writeFile(prefFile,json)).catch(()=>{});
 }

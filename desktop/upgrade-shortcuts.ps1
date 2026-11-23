@@ -1,5 +1,6 @@
 param([Parameter(Mandatory=$true)][string]$Executable)
 $root = Join-Path $env:LOCALAPPDATA 'CppStart'
+$installRoot = [IO.Directory]::GetParent([IO.Path]::GetDirectoryName($Executable)).FullName
 $shell = New-Object -ComObject WScript.Shell
 $dirs = @([Environment]::GetFolderPath('DesktopDirectory'), (Join-Path ([Environment]::GetFolderPath('Programs')) 'C++ Start'), $root)
 foreach ($dir in $dirs) {
@@ -9,7 +10,10 @@ foreach ($dir in $dirs) {
         try {
             $link = $shell.CreateShortcut($f)
             $target = [IO.Path]::GetFullPath($link.TargetPath)
-            if ($target.StartsWith($root+'\', [StringComparison]::OrdinalIgnoreCase) -and [IO.Path]::GetFileName($target) -eq 'CppStart.exe') {
+            $legacy = $target.StartsWith($root+'\', [StringComparison]::OrdinalIgnoreCase) -and [IO.Path]::GetFileName($target) -eq 'CppStart.exe'
+            $edition = [IO.Directory]::GetParent([IO.Path]::GetDirectoryName($target))
+            $priorStudio = $edition -and $edition.FullName -eq $installRoot -and [IO.Path]::GetFileName($target) -eq 'PolyglotStudio.exe'
+            if ($legacy -or $priorStudio) {
                 $link.TargetPath=$Executable
                 $link.Arguments=''
                 $link.WorkingDirectory=[IO.Path]::GetDirectoryName($Executable)

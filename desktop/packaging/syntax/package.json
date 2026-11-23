@@ -1,0 +1,13 @@
+{
+  "name": "polyglot-studio-cpp-grammar",
+  "private": true,
+  "scripts": {
+    "build": "esbuild index.mjs --bundle --format=iife --global-name=CppGrammar --minify --target=chrome140 --outfile=../../ui/vendor/cpp-grammar.js"
+  },
+  "devDependencies": {
+    "@lezer/common": "1.5.6",
+    "@lezer/cpp": "1.1.6",
+    "@lezer/highlight": "1.2.5",
+    "esbuild": "0.28.2"
+  }
+}

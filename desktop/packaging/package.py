@@ -1,6 +1,6 @@
 from pathlib import Path
 import sys, os, shutil, subprocess as sp, plistlib, datetime, gzip, hashlib, struct, stat, zlib, xml.etree.ElementTree as ET
-R=Path.cwd(); T=R/'buildtools'; D=R/'desktop'; OUTPUT=R/'desktop-downloads'; STAGE=R/'stage'; V='2.4.0'; EV='45.4.1'; O='Polyglot C++ Studio'
+R=Path.cwd(); T=R/'buildtools'; D=R/'desktop'; OUTPUT=R/'desktop-downloads'; STAGE=R/'stage'; V='2.4.1'; EV='45.4.1'; O='Polyglot C++ Studio'
 OUTPUT.mkdir(exist_ok=True);STAGE.mkdir(exist_ok=True)
 def run(*args,**opts):sp.run([str(a) for a in args],check=True,**opts)
 def assets(dest,arch):

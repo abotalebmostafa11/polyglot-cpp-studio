@@ -96,8 +96,8 @@ window.studio = {
       languages=e.languages || {};language=e.language||'en';theme=e.theme||'system';
       find('language').value=language;find('theme').value=theme;setLocale();applyTheme();break;
     case 'document':
-      window.dispatchEvent(new Event('documentchanged'));
       source.value=e.content===null ? starter : e.content;name=e.name;dirty=false;revision++;
+      window.dispatchEvent(new Event('documentchanged'));
       if (e.traceNavigation) checkedRevision=revision;
       else {issues=[];next=0;failed=false;captured='';limited=false;displayOutput();checkedRevision=-1;}
       updateName();gutter();status('ready');source.focus();break;

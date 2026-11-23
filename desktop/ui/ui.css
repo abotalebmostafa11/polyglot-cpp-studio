@@ -38,3 +38,29 @@ body{margin:0;height:100vh}header,nav,footer{user-select:none}.product h1{font-w
 #completion small{opacity:.75;font:11px var(--ui);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 #captureStatus{color:var(--sub);font:12px var(--ui)}#captureGroup{border-inline-start:1px solid var(--edge);padding-inline-start:9px}
 #endVideo{color:var(--alert)}#videoToggle.active{border-color:var(--alert)}nav{row-gap:6px}
+
+/* C++ colours are applied to the native editable text and follow the active theme. */
+:root {
+  --cpp-control:#783d99; --cpp-keyword:#1846a2; --cpp-type:#12676d;
+  --cpp-namespace:#39568a; --cpp-function:#795219; --cpp-variable:#244f76;
+  --cpp-string:#a22b25; --cpp-escape:#9d4811; --cpp-number:#08674d;
+  --cpp-comment:#36723a; --cpp-directive:#874075; --cpp-operator:#4c5666;
+}
+:root[data-tone=dark] {
+  --cpp-control:#d5a5ed; --cpp-keyword:#77baff; --cpp-type:#68d5c3;
+  --cpp-namespace:#9ad4ed; --cpp-function:#e6d392; --cpp-variable:#addbff;
+  --cpp-string:#f0aa8e; --cpp-escape:#ffd084; --cpp-number:#b9d69c;
+  --cpp-comment:#98bd83; --cpp-directive:#e2a3cf; --cpp-operator:#c3cfda;
+}
+::highlight(cpp-control) { color:var(--cpp-control) }
+::highlight(cpp-keyword) { color:var(--cpp-keyword) }
+::highlight(cpp-type) { color:var(--cpp-type) }
+::highlight(cpp-namespace) { color:var(--cpp-namespace) }
+::highlight(cpp-function) { color:var(--cpp-function) }
+::highlight(cpp-variable) { color:var(--cpp-variable) }
+::highlight(cpp-string) { color:var(--cpp-string) }
+::highlight(cpp-escape) { color:var(--cpp-escape) }
+::highlight(cpp-number) { color:var(--cpp-number) }
+::highlight(cpp-comment) { color:var(--cpp-comment) }
+::highlight(cpp-directive) { color:var(--cpp-directive) }
+::highlight(cpp-operator) { color:var(--cpp-operator) }
